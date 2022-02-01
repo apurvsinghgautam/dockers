@@ -7,7 +7,7 @@ FROM ubuntu
 # Set environment variables
 ENV RUNNING_IN_DOCKER true
 ENV LANG enUS.utf-8
-ENV TZ "America/New York"
+ENV TZ "America/New_York"
 ENV SHELL /bin/zsh
 ENV TERM xterm
 
@@ -15,7 +15,7 @@ RUN apt update && apt upgrade -y
 
 RUN DEBIAN_FRONTEND="noninteractive" \
     apt install -y --no-install-recommends \
-    less openssh-server vim curl bat fd-find
+    less openssh-server vim curl bat fd-find nmap
 RUN DEBIAN_FRONTEND="noninteractive" \
     apt install -y --no-install-recommends \
     wget git tmux tree unzip ncdu htop tzdata inetutils-ping inetutils-traceroute
