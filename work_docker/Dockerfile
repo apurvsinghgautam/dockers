@@ -7,7 +7,7 @@ FROM ubuntu
 # Set environment variables
 ENV RUNNING_IN_DOCKER true
 ENV LANG enUS.utf-8
-ENV TZ "America/Chicago"
+ENV TZ "America/New York"
 ENV SHELL /bin/zsh
 ENV TERM xterm
 
@@ -97,6 +97,7 @@ RUN sleep 2
 # ============================================================================================================
 
 # Use commands here --
+RUN apt download ripgrep && dpkg --force-overwrite -i ripgrep*.deb
 
 # ============================================================================================================
 # ============================================================================================================

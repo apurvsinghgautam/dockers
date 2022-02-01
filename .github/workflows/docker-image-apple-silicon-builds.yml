@@ -23,7 +23,7 @@ jobs:
       - name: Login to DockerHub
         uses: docker/login-action@v1 
         with:
-          username: tanq16
+          username: apurvsinghgautam
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
         
       - name: Build and push work docker
@@ -33,22 +33,4 @@ jobs:
           file: work_docker/Dockerfile.AppleSilicon
           platforms: linux/arm64
           push: true
-          tags: tanq16/sec_docker:work_apple
-      
-      - name: Build and push dev docker
-        uses: docker/build-push-action@v2
-        with:
-          context: dev_docker
-          file: dev_docker/Dockerfile.AppleSilicon
-          platforms: linux/arm64
-          push: true
-          tags: tanq16/sec_docker:dev_apple
-      
-      - name: Build and push security docker
-        uses: docker/build-push-action@v2
-        with:
-          context: security_docker
-          file: security_docker/Dockerfile.AppleSilicon
-          platforms: linux/arm64
-          push: true
-          tags: tanq16/sec_docker:main_apple
+          tags: apurvsinghgautam/work:apple
